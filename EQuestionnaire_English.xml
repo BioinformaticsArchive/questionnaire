@@ -1,0 +1,950 @@
+<?xml version="1.0"?>
+<Survey>
+
+
+  <QuestionLabel code="START" val="Welcome to the EQVS Electronic Questionnaire">
+	<WidgetPos width="450" height="50" xpos="20" ypos="20"/>  
+	<ToCode>START_TIME</ToCode>
+	<Section>Consents</Section>
+	
+  </QuestionLabel>
+
+  <QuestionGetTime code="START_TIME" val="Interview Start Time">
+    <WidgetPos width="900" height="50" xpos="20" ypos="20"/>
+    <ToCode>INTCODE</ToCode>
+    <Process>SetTimestamp</Process>
+    <Section>Consents</Section>
+  </QuestionGetTime>
+
+  <QuestionTextBox code="INTCODE" val="[1] Interviewer ID Code">
+	<WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+	<ToCode>INTERVIEWDATE</ToCode>
+	<Validation>TestNullEntry</Validation>
+	<Process>NoModify</Process>
+	<Section>Consents</Section>
+	
+  </QuestionTextBox>
+
+  <QuestionAutomatic code="INTERVIEWDATE">
+	<ToCode>IDNO</ToCode>
+	<Section>Consents</Section>
+	<Process>SetCurrentTimeInterview</Process>
+  </QuestionAutomatic>
+
+  <QuestionAutomatic code="IDNO">
+	<ToCode>STUDYNUMBER</ToCode>
+	<Section>Consents</Section>
+	<Process>SetParticipantID</Process>
+  </QuestionAutomatic>
+  
+  <QuestionTextBox code="STUDYNUMBER" val="[2] Study number">
+	<WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+	<ToCode>CONSENT</ToCode>
+	<Validation>TestNullEntry</Validation>
+	<Process>NoModify</Process>
+	<Section>Consents</Section>
+    
+  </QuestionTextBox>
+ 
+    <QuestionRadio code="CONSENT" val="[3] Has informed consent been signed?">
+        <WidgetPos width="500" height="100" xpos="20" ypos="20"/>  
+        <Section>Consents</Section>
+        <ToCode>PERSONAL</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Yes</Text>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+			<ToCode>CONSENT2</ToCode>
+            <Text>No</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+    </QuestionRadio>
+	
+	<QuestionRadio code="CONSENT2" val="[3] Check: Has informed consent been signed?">
+        <WidgetPos width="600" height="100" xpos="20" ypos="20"/>  
+        <Section>Consents</Section>
+        <ToCode>PERSONAL</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Yes</Text>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+			<ToCode>EXIT</ToCode>
+            <Text>No</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+    </QuestionRadio>
+
+  <QuestionLabel code="PERSONAL" val="PERSONAL HISTORY">
+		<WidgetPos width="450" height="50" xpos="20" ypos="20"/>
+		<ToCode>DOB</ToCode>
+		<Section>Personal History</Section>
+  </QuestionLabel>  
+
+   <QuestionDate code="DOB" val="[4] Date Of Birth">
+        <WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+        <SetKey>DOB</SetKey>
+        <ToCode>AGE</ToCode>
+        <Section>Personal History</Section>
+    </QuestionDate>
+    
+    <QuestionTextBox code="AGE" val="[5] Age in Years">
+    <WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+        <ToCode>SEX</ToCode>
+        <Validation>TestDOB</Validation>
+        <Process>NoModify</Process>
+        <Section>Personal History</Section>
+        <SetKey>AGE</SetKey>
+    </QuestionTextBox>
+    
+  <QuestionRadio code="SEX" val="[6] Gender">
+        <WidgetPos width="500" height="100" xpos="20" ypos="20"/>  
+        <Section>Personal History</Section>
+        <ToCode>EDLEV</ToCode>
+        <SetKey>Sex</SetKey>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Male</Text>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+            <Text>Female</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+    </QuestionRadio>
+    
+ <QuestionRadio code="EDLEV" val="[7] What is the highest level of education you have completed?">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Personal History</Section>
+    <ToCode>ALCOHOL</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Primary school</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>High school</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>3</Value>
+      <Text>Tertiary institute</Text>
+      <WidgetPos width="300" height="50" xpos="20" ypos="100"/>
+    </OptionRadio>
+   </QuestionRadio>
+
+  <QuestionTextBox code="ALCOHOL" val="[8] Alcohol consumption (units per week; 1 unit=330mL beer, 200mL wine or 50mL spirits):">
+		<WidgetPos width="970" height="50" xpos="20" ypos="20"/>
+		<ToCode>TOBACO</ToCode>
+		<Validation>TestNumberBetween0and100</Validation>
+		<Process>NoModify</Process>
+		<Section>Personal History</Section>
+		
+  </QuestionTextBox>
+
+  <QuestionTextBox code="TOBACO" val="[9] Cigarette smoking (pack years; 1 pack year = 10 cigarettes daily for 1 year):">
+		<WidgetPos width="970" height="50" xpos="20" ypos="20"/>
+		<ToCode>OCUPATION</ToCode>
+		<Validation>TestNumberBetween0and100</Validation>
+		<Process>NoModify</Process>
+		<Section>Personal History</Section>
+		
+  </QuestionTextBox>
+  
+  <QuestionRadio code="OCUPATION" val="[10] Current occupation:">
+    <WidgetPos width="900" height="200" xpos="20" ypos="20"/>
+    <Section>Personal History</Section>
+    <ToCode>OCUPACTIVITY</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Unemployed</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>Manual labour</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>3</Value>
+      <Text>Skilled labour</Text>
+      <WidgetPos width="200" height="50" xpos="480" ypos="30"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>4</Value>
+      <Text>Home duties</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="80"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>5</Value>
+      <Text>Scholar</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="80"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>6</Value>
+      <Text>Office worker</Text>
+      <WidgetPos width="200" height="50" xpos="480" ypos="80"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>7</Value>
+      <Text>Pensioner</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="130"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>8</Value>
+      <Text>Professional</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="130"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>9</Value>
+      <Text>Business/entrepreneur</Text>
+      <WidgetPos width="300" height="50" xpos="480" ypos="130"/>
+    </OptionRadio>
+  </QuestionRadio>
+  
+  <QuestionRadio code="OCUPACTIVITY" val="[11] Occupational physical activity:">
+    <WidgetPos width="600" height="200" xpos="20" ypos="20"/>
+    <Section>Personal History</Section>
+    <ToCode>LEISUREACTIVITY</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Sedentary</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>Light</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>3</Value>
+      <Text>Moderate</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="100"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>4</Value>
+      <Text>Heavy</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="100"/>
+    </OptionRadio>
+  </QuestionRadio> 
+  
+  <QuestionRadio code="LEISUREACTIVITY" val="[12] Leisure physical activity:">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Personal History</Section>
+    <ToCode>ZULU</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Never</Text>
+      <WidgetPos width="275" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>Less than once weekly</Text>
+      <WidgetPos width="275" height="50" xpos="300" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>3</Value>
+      <Text>1-2 times weekly</Text>
+      <WidgetPos width="275" height="50" xpos="20" ypos="100"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>4</Value>
+      <Text>>3 times weekly</Text>
+      <WidgetPos width="275" height="50" xpos="300" ypos="100"/>
+    </OptionRadio>
+  </QuestionRadio> 
+  
+  <QuestionLabel code="ZULU" val="VERIFICATION OF ZULU ORIGIN">
+		<WidgetPos width="450" height="50" xpos="20" ypos="20"/>
+		<ToCode>LANGUAGE</ToCode>
+		<Section>Zulu</Section>
+  </QuestionLabel>  
+  
+    <QuestionRadio code="LANGUAGE" val="[13] First language Zulu?">
+        <WidgetPos width="500" height="100" xpos="20" ypos="20"/>  
+        <Section>Zulu</Section>
+        <ToCode>PARENTS</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Yes</Text>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+            <Text>No</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+    </QuestionRadio>  
+  
+    <QuestionRadio code="PARENTS" val="[14] Both parents Zulu?">
+        <WidgetPos width="500" height="100" xpos="20" ypos="20"/>  
+        <Section>Zulu</Section>
+        <ToCode>FAMILY</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Yes</Text>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+            <Text>No</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+    </QuestionRadio>   
+  
+    <QuestionLabel code="FAMILY" val="FAMILY HISTORY">
+		<WidgetPos width="450" height="50" xpos="20" ypos="20"/>
+		<ToCode>DIABPARENT1</ToCode>
+		<Section>Family History</Section>
+    </QuestionLabel>  
+  
+    <QuestionRadio code="DIABPARENT1" val="[15a] Diabetes in parents?">
+        <WidgetPos width="500" height="100" xpos="20" ypos="20"/>  
+        <Section>Family History</Section>
+        <ToCode>DIABGRAND1</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Yes</Text>
+			<ToCode>DIABPARENT2</ToCode>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+            <Text>No</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+		<OptionRadio>
+            <Value>3</Value>
+            <Text>Do not know</Text>
+            <WidgetPos width="150" height="50" xpos="20" ypos="100"/>
+        </OptionRadio>
+    </QuestionRadio>   
+  
+    <QuestionRadio code="DIABPARENT2" val="[15b] Please specify:">
+        <WidgetPos width="500" height="200" xpos="20" ypos="20"/>  
+        <Section>Family History</Section>
+        <ToCode>DIABGRAND1</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Father</Text>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+            <Text>Mother</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+		<OptionRadio>
+            <Value>3</Value>
+            <Text>Both parents</Text>
+            <WidgetPos width="200" height="50" xpos="20" ypos="100"/>
+        </OptionRadio>
+    </QuestionRadio>   
+  
+    <QuestionRadio code="DIABGRAND1" val="[16a] Diabetes in grandparents?">
+        <WidgetPos width="500" height="100" xpos="20" ypos="20"/>  
+        <Section>Family History</Section>
+        <ToCode>NUMSIB</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Yes</Text>
+			<ToCode>DIABGRAND2</ToCode>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+            <Text>No</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+		<OptionRadio>
+            <Value>3</Value>
+            <Text>Do not know</Text>
+            <WidgetPos width="150" height="50" xpos="20" ypos="100"/>
+        </OptionRadio>
+    </QuestionRadio>    
+
+  <QuestionRadio code="DIABGRAND2" val="[16b] Please specify:">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Family History</Section>
+    <ToCode>NUMSIB</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Paternal grandfather</Text>
+      <WidgetPos width="300" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>Paternal grandmother</Text>
+      <WidgetPos width="300" height="50" xpos="330" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>3</Value>
+      <Text>Maternal grandfather</Text>
+      <WidgetPos width="300" height="50" xpos="20" ypos="80"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>4</Value>
+      <Text>Maternal grandmother</Text>
+      <WidgetPos width="300" height="50" xpos="330" ypos="80"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>5</Value>
+      <Text>Maternal and paternal granparents affected</Text>
+      <WidgetPos width="500" height="50" xpos="20" ypos="130"/>
+    </OptionRadio>
+  </QuestionRadio> 
+
+  <QuestionTextBox code="NUMSIB" val="[17] Number of siblings:">
+		<WidgetPos width="400" height="50" xpos="20" ypos="20"/>
+		<ToCode>DIABSIB1</ToCode>
+    <SetKey>NUMSIBS</SetKey>
+		<Validation>TestNumericInt</Validation>
+		<Process>NoModify</Process>
+		<Section>Family History</Section>
+		
+  </QuestionTextBox>
+
+    <QuestionRadio code="DIABSIB1" val="[18a] Diabetes in siblings?">
+        <WidgetPos width="500" height="100" xpos="20" ypos="20"/>  
+        <Section>Family History</Section>
+        <ToCode>DIABETES</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Yes</Text>
+			<ToCode>DIABSIB2</ToCode>
+            <WidgetPos width="100" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+            <Text>No</Text>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+		<OptionRadio>
+            <Value>3</Value>
+            <Text>Do not know</Text>
+            <WidgetPos width="150" height="50" xpos="20" ypos="100"/>
+        </OptionRadio>
+    </QuestionRadio>    	
+  
+    <QuestionRadio code="DIABSIB2" val="[18b] Please specify:">
+        <WidgetPos width="500" height="200" xpos="20" ypos="20"/>  
+        <Section>Family History</Section>
+        <ToCode>BROTHER</ToCode>
+        <OptionRadio>
+            <Value>1</Value>
+            <Text>Brother</Text>
+            <WidgetPos width="150" height="50" xpos="20" ypos="30"/>
+        </OptionRadio>
+        <OptionRadio>
+            <Value>2</Value>
+            <Text>Sister</Text>
+			<ToCode>SISTER</ToCode>
+            <WidgetPos width="150" height="50" xpos="200" ypos="30"/>
+        </OptionRadio>
+		<OptionRadio>
+            <Value>3</Value>
+            <Text>Brother and sister</Text>
+			<ToCode>BROTHERSISTER1</ToCode>
+            <WidgetPos width="300" height="50" xpos="20" ypos="100"/>
+        </OptionRadio>
+    </QuestionRadio>   
+  
+  <QuestionTextBox code="BROTHER" val="[18c] Please specify number of brothers affected:">
+		<WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+		<ToCode>DIABETES</ToCode>
+		<Validation>TestLessThanTotalSibs</Validation>
+		<Process>NoModify</Process>
+		<Section>Family History</Section>
+		
+  </QuestionTextBox>  
+  
+  <QuestionTextBox code="SISTER" val="[18d] Please specify number of sisters affected:">
+		<WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+		<ToCode>DIABETES</ToCode>
+		<Validation>TestLessThanTotalSibs</Validation>
+		<Process>NoModify</Process>
+		<Section>Family History</Section>
+		
+  </QuestionTextBox>    
+  
+  <QuestionTextBox code="BROTHERSISTER1" val="[18c] Please specify number of brothers affected:">
+		<WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+		<ToCode>BROTHERSISTER2</ToCode>
+    <SetKey>NUM_AFFECTED_BROTHERS</SetKey>
+		<Validation>TestLessThanTotalSibs</Validation>
+		<Process>NoModify</Process>
+		<Section>Family History</Section>
+		
+  </QuestionTextBox>  
+  
+  <QuestionTextBox code="BROTHERSISTER2" val="[18d] Please specify number of sisters affected:">
+		<WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+		<ToCode>DIABETES</ToCode>
+		<Validation>TestBrotherPlusSistersLessThanTotalSibs</Validation>
+		<Process>NoModify</Process>
+		<Section>Family History</Section>
+		
+  </QuestionTextBox>    
+  
+    <QuestionLabel code="DIABETES" val="DIABETES MELLITUS">
+		<WidgetPos width="450" height="50" xpos="20" ypos="20"/>
+		<ToCode>DIAGNOSISYEAR</ToCode>
+		<Section>Diabetes</Section>
+    </QuestionLabel>    
+  
+    <QuestionYear code="DIAGNOSISYEAR" val="[19] Year of diagnosis:">
+        <WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+        <ToCode>DIAGNOSISAGE</ToCode>
+        <Section>Diabetes</Section>
+        <SetKey>DIAGYEAR</SetKey>
+    </QuestionYear> 
+  
+    <QuestionTextBox code="DIAGNOSISAGE" val="[20] Age at diagnosis (years):">
+      <WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+        <ToCode>THERAPY</ToCode>
+      <Validation>TestDiagnosisAge</Validation>
+        
+		<Process>NoModify</Process>
+        <Section>Diabetes</Section>
+        <SetKey>AGE</SetKey>
+    </QuestionTextBox> 
+	
+  <QuestionRadio code="THERAPY" val="[21] Current therapy:">
+    <WidgetPos width="600" height="200" xpos="20" ypos="20"/>
+    <Section>Diabetes</Section>
+    <ToCode>LIPIDTHERAPY</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>None</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>Oral therapy</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>3</Value>
+      <Text>Insulin alone</Text>
+	  <ToCode>INSULINYEAR</ToCode>
+      <WidgetPos width="200" height="50" xpos="20" ypos="100"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>4</Value>
+      <Text>Oral plus insulin</Text>
+	  <ToCode>INSULINYEAR</ToCode>
+      <WidgetPos width="250" height="50" xpos="250" ypos="100"/>
+    </OptionRadio>
+   </QuestionRadio>  
+	
+    <QuestionYear code="INSULINYEAR" val="[22] Date of commencement of insulin therapy (year):">
+        <WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+        <ToCode>LIPIDTHERAPY</ToCode>
+        <Section>Diabetes</Section>
+        <SetKey></SetKey>
+		
+    </QuestionYear> 	
+	
+  <QuestionRadio code="LIPIDTHERAPY" val="[23] Lipid-lowering therapy:">
+    <WidgetPos width="600" height="200" xpos="20" ypos="20"/>
+    <Section>Diabetes</Section>
+    <ToCode>CLINICAL</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>3</Value>
+      <Text>Do not know</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="100"/>
+    </OptionRadio>	
+   </QuestionRadio>  
+	
+    <QuestionLabel code="CLINICAL" val="CLINICAL INFORMATION">
+		<WidgetPos width="450" height="50" xpos="20" ypos="20"/>
+		<ToCode>COMORBID1</ToCode>
+		<Section>Clinical Information</Section>
+    </QuestionLabel>    	
+	
+  <QuestionRadio code="COMORBID1" val="[24a] Co-Morbid illness:">
+    <WidgetPos width="800" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MACROVASCULAR1</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>None</Text>
+      <WidgetPos width="250" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>Respiratory</Text>
+	  <ToCode>COMORBID2</ToCode>
+      <WidgetPos width="250" height="50" xpos="275" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>3</Value>
+      <Text>Cardiovascular</Text>
+	  <ToCode>COMORBID2</ToCode>
+      <WidgetPos width="250" height="50" xpos="530" ypos="30"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>4</Value>
+      <Text>Gastrointestinal</Text>
+	  <ToCode>COMORBID2</ToCode>
+      <WidgetPos width="250" height="50" xpos="20" ypos="80"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>5</Value>
+      <Text>Renal</Text>
+	  <ToCode>COMORBID2</ToCode>
+      <WidgetPos width="250" height="50" xpos="275" ypos="80"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>6</Value>
+      <Text>Neurologic</Text>
+	  <ToCode>COMORBID2</ToCode>
+      <WidgetPos width="250" height="50" xpos="530" ypos="80"/>
+    </OptionRadio>
+	<OptionRadio>
+      <Value>7</Value>
+      <Text>Other</Text>
+	  <ToCode>COMORBID2</ToCode>
+      <WidgetPos width="250" height="50" xpos="20" ypos="130"/>
+    </OptionRadio>
+  </QuestionRadio>
+	
+  <QuestionRadio code="COMORBID2" val="[24b] Nature of co-morbid illness:">
+    <WidgetPos width="600" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MACROVASCULAR1</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Infectious</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>Non-infectious</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+   </QuestionRadio>  	
+	
+  <QuestionRadio code="MACROVASCULAR1" val="[25a] Macrovascular disease: Coronary artery disease">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MACROVASCULAR2</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+   </QuestionRadio> 	
+	
+  <QuestionRadio code="MACROVASCULAR2" val="[25b] Macrovascular disease: Cerebrovascular disease">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MACROVASCULAR3</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+   </QuestionRadio> 	
+	
+  <QuestionRadio code="MACROVASCULAR3" val="[25c] Macrovascular disease: Peripheral vascular disease">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MACROVASCULAR4</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+   </QuestionRadio> 	
+	
+  <QuestionRadio code="MACROVASCULAR4" val="[25d] Macrovascular disease: Hypertension">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MICROVASCULAR1</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+	  <ToCode>MACROVASCULAR5</ToCode>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+   </QuestionRadio> 	
+	
+    <QuestionYear code="MACROVASCULAR5" val="[25e] Year of diagnosis:">
+        <WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+        <ToCode>MICROVASCULAR1</ToCode>
+        <Section>Clinical Information</Section>
+        <SetKey></SetKey>
+		
+    </QuestionYear> 	
+	
+  <QuestionRadio code="MICROVASCULAR1" val="[26a] Microvascular disease: Retionopathy">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MICROVASCULAR2</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+   </QuestionRadio> 	
+	
+  <QuestionRadio code="MICROVASCULAR2" val="[26b] Microvascular disease: Nephropathy">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MICROVASCULAR3</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+   </QuestionRadio> 	
+	
+  <QuestionRadio code="MICROVASCULAR3" val="[26c] Microvascular disease: Neuropathy">
+    <WidgetPos width="700" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Information</Section>
+    <ToCode>MEASURE</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+   </QuestionRadio> 		
+	
+    <QuestionLabel code="MEASURE" val="CLINICAL MEASUREMENTS">
+		<WidgetPos width="450" height="50" xpos="20" ypos="20"/>
+		<ToCode>HEIGHT</ToCode>
+		<Section>Clinical Measurements</Section>
+    </QuestionLabel>  	
+	
+
+  <QuestionTextBox code="HEIGHT" val="[27] Height (cm)">
+    <WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+    <ToCode>WEIGHT</ToCode>
+    <Validation>TestHeight</Validation>
+    <Process>NoModify</Process>
+    <Section>Clinical Measurements</Section>
+    <SetKey>Height</SetKey>
+  </QuestionTextBox>
+    	
+  <QuestionTextBox code="WEIGHT" val="[28] Weight (kg)">
+    <WidgetPos width="300" height="50" xpos="20" ypos="20"/>
+    <ToCode>BMI1</ToCode>
+    <Validation>TestWeight</Validation>
+    <Process>CalcBMI</Process>
+    <Section>Clinical Measurements</Section>
+    <SetKey>Weight</SetKey>
+  </QuestionTextBox>
+
+  <QuestionRadioDynamicLabel code="BMI1" val="[29a]">
+    <WidgetPos width="600" height="200" xpos="20" ypos="20"/>
+    <Section>Clinical Measurements</Section>
+    <LabelGeneratorFunc>DisplayBMI</LabelGeneratorFunc>
+    <ToCode>WAISTCIRC</ToCode>
+    <SetKey></SetKey>
+    <OptionRadio>
+      <Value>1</Value>
+      <Text>Yes</Text>
+      <ToCode>WAISTCIRC</ToCode>
+      <WidgetPos width="200" height="50" xpos="20" ypos="30"/>
+    </OptionRadio>
+    <OptionRadio>
+      <Value>2</Value>
+      <Text>No</Text>
+      <ToCode>BMI2</ToCode>
+      <WidgetPos width="200" height="50" xpos="250" ypos="30"/>
+    </OptionRadio>
+  </QuestionRadioDynamicLabel>
+
+  <QuestionTextBox code="BMI2" val="[29b] Please enter the correct BMI here">
+    <WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+    <ToCode>WAISTCIRC</ToCode>
+    <Validation></Validation>
+    <Process>SaveBMI</Process>
+    <Section>Clinical Measurements</Section>
+    <SetKey></SetKey>
+  </QuestionTextBox>
+
+
+  <QuestionTextBox code="WAISTCIRC" val="[30] Waist circumference (cm)">
+    <WidgetPos width="400" height="50" xpos="20" ypos="20"/>
+    <ToCode>HIPCIRC</ToCode>
+    <Validation>TestNumeric</Validation>
+    <Process>NoModify</Process>
+    <Section>Clinical Measurements</Section>
+    
+  </QuestionTextBox>
+    	
+  <QuestionTextBox code="HIPCIRC" val="[31] Hip circumference (cm)">
+    <WidgetPos width="400" height="50" xpos="20" ypos="20"/>
+    <ToCode>SYST1</ToCode>
+    <Validation>TestNumeric</Validation>
+    <Process>NoModify</Process>
+    <Section>Clinical Measurements</Section>
+  </QuestionTextBox>
+	
+	
+  <QuestionTextDuplicate code="SYST1" val="[32a] Systolic Blood Pressure: First Reading (mm Hg)">
+    <WidgetPos width="900" height="50" xpos="20" ypos="20"/>
+    <ToCode>DIAST1</ToCode>
+    <Validation>TestNumeric</Validation>
+    <Process>NoModify</Process>
+    <Section>Clinical Measurements</Section>
+    <SetKey>SYST1</SetKey>
+  </QuestionTextDuplicate>
+  
+  <QuestionTextDuplicate code="DIAST1" val="[32b] Diastolic Blood Pressure: First Reading (mm Hg)">
+    <WidgetPos width="900" height="50" xpos="20" ypos="20"/>
+    <ToCode>SYST2</ToCode>
+    <Validation>TestSBPhigherThanDBP</Validation>
+    <Process>NoModify</Process>
+    <SetKey>DIAST1</SetKey>
+    <Section>Clinical Measurements</Section>
+  </QuestionTextDuplicate>
+  
+  <QuestionTextDuplicate code="SYST2" val="[33a] Systolic Blood Pressure: Second Reading (mm Hg)">
+    <WidgetPos width="900" height="50" xpos="20" ypos="20"/>
+    <SetKey>SYST2</SetKey>
+    <ToCode>DIAST2</ToCode>
+    <Validation>TestNumeric</Validation>
+    <Process>CalcAverageSyst</Process>
+    <Section>Clinical Measurements</Section>
+    
+  </QuestionTextDuplicate>
+
+  <QuestionTextDuplicate code="DIAST2" val="[33b] Diastolic Blood Pressure: Second Reading (mm Hg)">
+    <WidgetPos width="900" height="50" xpos="20" ypos="20"/>
+    <ToCode>STOP_TIME</ToCode>
+    <Validation>TestSBPhigherThanDBP</Validation>
+    <Process>CalcAverageDiast</Process>
+    <Section>Clinical Measurements</Section>
+  </QuestionTextDuplicate>
+
+  <QuestionGetTime code="STOP_TIME" val="Interview Stop Time">
+    <WidgetPos width="900" height="50" xpos="20" ypos="20"/>
+    <ToCode>EXIT</ToCode>
+    <Section>Final Comments</Section>
+    <Process>CalcElapsedTime</Process>
+  </QuestionGetTime>
+
+
+  <QuestionLabel code="EXIT" val="This screen marks the end of the survey. Close this window to save and exit.">
+    <WidgetPos width="900" height="50" xpos="20" ypos="20"/>
+    <ToCode>None</ToCode>
+    <Section>Final Comments</Section>
+  </QuestionLabel>
+  
+  
+  
+  
+  <!--
+  
+  <QuestionTextTriple code="SYSTAVG1" val="[32a] Systolic Blood Pressure (mm Hg)">
+    <WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+    <ToCode>SYSTAVG2</ToCode>
+    <Validation>Check3NumericReadings</Validation>
+    <Process>CalcAverageSecondAndThirdReadingsSYST</Process>
+    <Section>Clinical Measurements</Section>
+  </QuestionTextTriple>
+
+  <QuestionTextTriple code="SYSTAVG2" val="[32b] Systolic Blood Pressure (mm Hg) (2nd Entry)">
+    <WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+    <ToCode>DIASTAVG1</ToCode>
+    <FromCode>SYSTAVG1</FromCode>
+    <Process>NoModify</Process>
+    <Section>Clinical Measurements</Section>
+    <OnErrorQuestionCompare>SYSTAVG</OnErrorQuestionCompare>
+    <Validation>CheckSameAsPrevious</Validation>
+  </QuestionTextTriple>
+
+  <QuestionTextTriple code="DIASTAVG1" val="[33a] Diastolic Blood Pressure (mm Hg)">
+    <WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+    <ToCode>DIASTAVG2</ToCode>
+    <Validation>Check3NumericReadings</Validation>
+    <Process>CalcAverageSecondAndThirdReadingsDIAST</Process>
+    <Section>Clinical Measurements</Section>
+  </QuestionTextTriple>
+
+  <QuestionTextTriple code="DIASTAVG2" val="[33b] Diastolic Blood Pressure (mm Hg) (2nd Entry)">
+    <WidgetPos width="600" height="50" xpos="20" ypos="20"/>
+    <ToCode>EXIT</ToCode>
+    <FromCode>DIASTAVG1</FromCode>
+    <Process>NoModify</Process>
+    <Section>Clinical Measurements</Section>
+    <OnErrorQuestionCompare>DIASTAVG</OnErrorQuestionCompare>
+    <Validation>CheckSameAsPrevious</Validation>
+  </QuestionTextTriple>		
+  
+  -->
+		
+	
+	
+</Survey>

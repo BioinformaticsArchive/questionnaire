@@ -1,0 +1,40 @@
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\bin\Debug\EQdbUploader.exe
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\bin\Debug\EQdbUploader.pdb
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\bin\Debug\MySql.Data.dll
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\obj\x86\Debug\EQdbUploader.Form1.resources
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\obj\x86\Debug\EQdbUploader.Properties.Resources.resources
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\obj\x86\Debug\EQdbUploader.exe
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\EQdbUploader\obj\x86\Debug\EQdbUploader.pdb
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.exe
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.pdb
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\bin\Debug\EQdbUploader.exe
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\bin\Debug\EQdbUploader.pdb
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\bin\Debug\MySql.Data.dll
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.Form1.resources
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.Properties.Resources.resources
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\sr7\my documents\visual studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\sr7\My Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.PasswordForm.resources
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.exe
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.pdb
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\bin\Debug\EQdbUploader.exe
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\bin\Debug\EQdbUploader.pdb
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.Form1.resources
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.PasswordForm.resources
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.Properties.Resources.resources
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\sr7\Documents\Visual Studio 2010\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.exe
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.pdb
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\bin\Debug\EQdbUploader.exe
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\bin\Debug\EQdbUploader.pdb
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.csprojResolveAssemblyReference.cache
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.Form1.resources
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.PasswordForm.resources
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.Properties.Resources.resources
+C:\Users\sr7\Documents\EQ docs\licensing issues\Projects\EQdbUploader\EQdbUploader\obj\x86\Debug\EQdbUploader.csproj.GenerateResource.Cache

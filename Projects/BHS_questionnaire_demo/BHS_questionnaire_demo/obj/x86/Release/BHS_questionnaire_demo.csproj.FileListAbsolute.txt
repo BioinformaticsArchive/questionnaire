@@ -1,0 +1,9 @@
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\bin\Release\BHS_questionnaire_demo.exe
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\bin\Release\BHS_questionnaire_demo.pdb
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\obj\x86\Release\ResolveAssemblyReference.cache
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\obj\x86\Release\BHS_questionnaire_demo.Form1.resources
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\obj\x86\Release\BHS_questionnaire_demo.Properties.Resources.resources
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\obj\x86\Release\GenerateResource.read.1.tlog
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\obj\x86\Release\GenerateResource.write.1.tlog
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\obj\x86\Release\BHS_questionnaire_demo.exe
+C:\Documents and Settings\sr7\Local Settings\Application Data\Temporary Projects\BHS_questionnaire_demo\obj\x86\Release\BHS_questionnaire_demo.pdb
